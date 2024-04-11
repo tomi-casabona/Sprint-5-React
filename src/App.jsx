@@ -34,11 +34,17 @@ function App() {
     if (count === 1) setCount(2);
     if (count === 2) setCount(0);
   }
+  function prevStep() {
+    if (count === 0) setCount(2);
+    if (count === 1) setCount(0);
+    if (count === 2) setCount(1);
+  }
 
   return (
     <main className="main">
       <Card
-        handleClick={nextStep}
+        nextLayout={nextStep}
+        prevLayout={prevStep}
         count={count}
         data={tutorialData[count]}
       ></Card>

@@ -44,7 +44,16 @@ body {
   position: absolute;
   bottom: 20px;
   right: 20px;
-  width: 7vw;
+  width: 7vh;
+  align-self: flex-end;
+  background-color: transparent;
+}
+
+.button-prev {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  width: 7vh;
   align-self: flex-end;
   background-color: transparent;
 }

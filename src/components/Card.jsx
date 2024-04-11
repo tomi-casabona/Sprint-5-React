@@ -1,8 +1,10 @@
-export const Card = ({ data, handleClick }) => {
-  const handleButtonClick = () => {
-    handleClick();
+export const Card = ({ data, nextLayout, prevLayout, count }) => {
+  const handleNextClick = () => {
+    nextLayout();
   };
-  console.log(data.image);
+  const handlePrevClick = () => {
+    prevLayout();
+  };
 
   return (
     <>
@@ -14,11 +16,16 @@ export const Card = ({ data, handleClick }) => {
           {data.title && <h2>{data.title}</h2>}
           {data.description && <p>{data.description}</p>}
         </div>
-        <img
+        {count<=1 && <img
           className="button"
           src="../public/images/right-arrow.png"
-          onClick={handleButtonClick}
-        ></img>
+          onClick={handleNextClick}
+        ></img>}
+        {count>=1 && <img
+          className="button-prev"
+          src="../public/images/left-arrow.png"
+          onClick={handlePrevClick}
+        ></img>}
       </section>
     </>
   );
