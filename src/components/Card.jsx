@@ -1,4 +1,8 @@
-export const Card = ({ count, data }) => {
+export const Card = ({ count, data, handleClick }) => {
+  const handleButtonClick = () => {
+    handleClick();
+  };
+
   return (
     <section>
       {data.title && <h2>{data.title}</h2>}
@@ -7,7 +11,7 @@ export const Card = ({ count, data }) => {
           <strong>{data.description}</strong>
         </p>
       )}
-      <button>Card {count}</button>
+      <button onClick={handleButtonClick}>Card {count}</button>
     </section>
   );
 };

@@ -29,13 +29,18 @@ const tutorialData = [
 function App() {
   const [count, setCount] = useState(0);
 
+  function nextStep() {
+    if (count === 0) setCount(1);
+    if (count === 1) setCount(2);
+    if (count === 2) setCount(0);
+  }
+
   return (
     <main>
       <h1>Sprint-5 React</h1>
-      <Card count={count} data={tutorialData[0]}></Card>
+      <Card handleClick={nextStep} count={count} data={tutorialData[count]}></Card>
     </main>
   );
 }
 
 export default App;
-
