@@ -1,3 +1,4 @@
+import { ArrowButton } from "./ArrowButton";
 export const Card = ({ data, nextLayout, prevLayout, count }) => {
   const handleNextClick = () => {
     nextLayout();
@@ -16,16 +17,21 @@ export const Card = ({ data, nextLayout, prevLayout, count }) => {
           {data.title && <h2>{data.title}</h2>}
           {data.description && <p>{data.description}</p>}
         </div>
-        {count<=1 && <img
-          className="button"
-          src="../public/images/right-arrow.png"
-          onClick={handleNextClick}
-        ></img>}
-        {count>=1 && <img
-          className="button-prev"
-          src="../public/images/left-arrow.png"
-          onClick={handlePrevClick}
-        ></img>}
+        {count <= 1 && (
+          <ArrowButton
+            throwHandleClick={handleNextClick}
+            src={"../public/images/right-arrow.png"}
+            className="button"
+          ></ArrowButton>
+        )}
+
+        {count >= 1 && (
+          <ArrowButton
+            throwHandleClick={handlePrevClick}
+            src={"../public/images/left-arrow.png"}
+            className="button-prev"
+          ></ArrowButton>
+        )}
       </section>
     </>
   );
