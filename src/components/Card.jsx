@@ -1,4 +1,6 @@
 import { ArrowButton } from "./ArrowButton";
+import { ContentText } from "./ContentText";
+
 export const Card = ({ data, nextLayout, prevLayout, count }) => {
   const handleNextClick = () => {
     nextLayout();
@@ -13,10 +15,7 @@ export const Card = ({ data, nextLayout, prevLayout, count }) => {
         <img className="image" src={data.image} alt="" />
       </section>
       <section className="main-container">
-        <div className="content">
-          {data.title && <h2>{data.title}</h2>}
-          {data.description && <p>{data.description}</p>}
-        </div>
+        <ContentText data={data} />
         {count <= 1 && (
           <ArrowButton
             throwHandleClick={handleNextClick}
