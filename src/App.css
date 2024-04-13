@@ -12,6 +12,10 @@ body {
   align-items: center;
 }
 
+.content {
+  height: 30hv;
+}
+
 .header {
   display: flex;
   background-color: rgb(79, 168, 178);
@@ -32,44 +36,33 @@ body {
   background-color: antiquewhite;
   width: 100%;
   text-align: center;
-  height: 30vh;
-}
-
-.content {
-  background-color: transparent;
-  padding-left: 20px;
-  padding-right: 20px;
+  height: 40vh;
 }
 
 .footer {
+  position: fixed;
+  bottom: 0;
   height: 10hv;
   width: 100%;
-  background-color: rgb(139, 0, 86);
 }
 
-.button {
+.next {
   position: absolute;
-  bottom: 20px;
-  right: 20px;
+  right: 30px;
+  bottom: 30px;
   width: 7vh;
-  align-self: flex-end;
-  background-color: transparent;
 }
 
-.button-prev {
+.prev {
   position: absolute;
-  bottom: 20px;
-  right: 70px;
+  right: 80px;
+  bottom: 30px;
   width: 7vh;
-  align-self: flex-end;
-  background-color: transparent;
 }
 
 .indicator {
   position: absolute;
-  bottom: 20px;
-  left: 20px;
+  left: 30px;
+  bottom: 30px;
   width: 7vh;
-  align-self: flex-end;
-  background-color: transparent;
 }

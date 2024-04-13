@@ -1,6 +1,5 @@
-export const Indicator = ({pasos}) => {
-
+export const Indicator = ({pasos, className, quantity}) => {
     return(
-        <div>{pasos}</div>
+        <div className={className}> {pasos+1}-{quantity} </div>
     )
 }

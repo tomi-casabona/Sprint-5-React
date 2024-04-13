@@ -2,13 +2,14 @@ import { ArrowButton } from "./ArrowButton";
 import { ContentText } from "./ContentText";
 import { Indicator } from "./Indicator";
 
-export const Card = ({ data, nextLayout, prevLayout, count }) => {
+export const Card = ({ data, nextLayout, prevLayout, count, quantity }) => {
   const handleNextClick = () => {
     nextLayout();
   };
   const handlePrevClick = () => {
     prevLayout();
   };
+ 
 
   return (
     <>
@@ -22,11 +23,15 @@ export const Card = ({ data, nextLayout, prevLayout, count }) => {
 
 <section className="footer">
 
+  <Indicator className="indicator" pasos={count} quantity={quantity} />
+
+<div className="button">
+
       {count <= 1 && (
         <ArrowButton
           throwHandleClick={handleNextClick}
           src={"./images/right-arrow.png"}
-          className="button"
+          className="next"
         ></ArrowButton>
       )}
 
@@ -34,13 +39,17 @@ export const Card = ({ data, nextLayout, prevLayout, count }) => {
         <ArrowButton
           throwHandleClick={handlePrevClick}
           src={"./images/left-arrow.png"}
-          className="button-prev"
+          className="prev"
         ></ArrowButton>
       )}
+
+</div>
       
-      <Indicator className="indicator" pasos={count} />
 
 </section>
+
+
+
     </>
   );
 };

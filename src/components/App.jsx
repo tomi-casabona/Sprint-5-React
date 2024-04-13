@@ -28,16 +28,17 @@ const tutorialData = [
 
 function App() {
   const [count, setCount] = useState(1);
+  const quantity = tutorialData.length;
 
   function nextStep() {
     if (count === 0) setCount(1);
-    if (count === 1) setCount(2);
+    if (count === 1) setCount(2);  
     if (count === 2) setCount(0);
   }
   function prevStep() {
     if (count === 0) setCount(2);
-    if (count === 1) setCount(0);
-    if (count === 2) setCount(1);
+    if (count === 1) setCount(0); 
+    if(count === 2) setCount(1);  
   }
 
   return (
@@ -47,6 +48,7 @@ function App() {
         prevLayout={prevStep}
         count={count}
         data={tutorialData[count]}
+        quantity={quantity}
       ></Card>
     </main>
   );
