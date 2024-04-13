@@ -32,12 +32,19 @@ body {
   background-color: antiquewhite;
   width: 100%;
   text-align: center;
-  height: 40vh;
+  height: 30vh;
 }
+
 .content {
   background-color: transparent;
   padding-left: 20px;
   padding-right: 20px;
+}
+
+.footer {
+  height: 10hv;
+  width: 100%;
+  background-color: rgb(139, 0, 86);
 }
 
 .button {
@@ -50,6 +57,15 @@ body {
 }
 
 .button-prev {
+  position: absolute;
+  bottom: 20px;
+  right: 70px;
+  width: 7vh;
+  align-self: flex-end;
+  background-color: transparent;
+}
+
+.indicator {
   position: absolute;
   bottom: 20px;
   left: 20px;

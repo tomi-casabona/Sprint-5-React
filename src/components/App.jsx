@@ -8,21 +8,21 @@ const tutorialData = [
     description:
       "Un minim de 30 horas a la setmana. Si no en tens prou, huarás de dedicarli més hores. Al principi sembla imposible peró notaras una millora  rápidament.",
     bgColor: "white",
-    image: "./public/images/time_managment.svg",
+    image: "./images/time_managment.svg",
   },
   {
     title: "Programa projectes propis",
     description:
       "Mes val 10 hores treballant en projectes propis que 10 hores mirant tutorials. La motivació i la implementacio en el projecte ajudara a acelerar el teu aprenentatge",
     bgColor: "white",
-    image: "./public/images/programming.svg",
+    image: "./images/programming.svg",
   },
   {
     title: "Procura descansar",
     description:
       "Descansar bé i desconectar son vitals. D'aquesta manera reduiras l'estress y l'ansietat. Milloraras la teva concentració i consolidarás el teu aprenentatge",
     bgColor: "white",
-    image: "./public/images/meditation.svg",
+    image: "./images/meditation.svg",
   },
 ];
 
