@@ -30,25 +30,25 @@ function App() {
   const [count, setCount] = useState(1);
   const quantity = tutorialData.length;
   //const [ entringFrom, setEntringFrom ] = useState(null);
-  const [exitingTo, setExitingTo] = useState(null);
+  const [animationClass, setAnimationClass] = useState(null);
 
   // functions for change the count state
   const nextStep = () => {
-    setExitingTo("exitingToRight");
+    setAnimationClass("exitingToRight");
 
     setTimeout(() => {
+      setAnimationClass("startingFromLeft");
       setCount((prevCount) => (prevCount + 1) % quantity);
-      setExitingTo(null);
-    }, 500);
+    }, 200);
   };
 
   const prevStep = () => {
-    setExitingTo("exitingToLeft");
+    setAnimationClass("exitingToLeft");
 
     setTimeout(() => {
       setCount((prevCount) => (prevCount - 1 + quantity) % quantity);
-      setExitingTo(null);
-    }, 500);
+      setAnimationClass("startingFromRight");
+    }, 200);
   };
 
   return (
@@ -59,7 +59,7 @@ function App() {
         count={count}
         data={tutorialData}
         quantity={quantity}
-        exitingTo={exitingTo}
+        animationClass={animationClass}
       ></Card>
     </main>
   );

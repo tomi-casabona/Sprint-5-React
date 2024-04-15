@@ -25,27 +25,6 @@ body {
   align-items: center;
 }
 
-.image {
-  min-width: 320px;
-  height: 40vh;
-  animation: slideOutToRight 0.5s ease-in-out;
-}
-
-.exitingToLeft {
-  animation: slideOutToLeft 0.5s ease-in-out;
-}
-
-.exitingToRight {
-  animation: slideOutToRight 0.5s ease-in-out;
-}
-
-.startingFromLeft {
-  animation: slideInFromLeft 0.5s ease-in-out;
-}
-.startingFromRight {
-  animation: slideInFromRight 0.5s ease-in-out;
-}
-
 .main-container {
   display: flex;
   flex-direction: column;
@@ -55,34 +34,25 @@ body {
   height: 40vh;
 }
 
-.footer {
-  position: fixed;
-  bottom: 0;
-  height: 10hv;
-  width: 100%;
+.image {
+  min-width: 320px;
+  height: 40vh;
 }
 
-.next {
-  position: absolute;
-  right: 30px;
-  bottom: 30px;
-  width: 7vh;
+.exitingToLeft {
+  animation: slideOutToLeft 0.3s linear;
 }
 
-.prev {
-  position: absolute;
-  right: 120px;
-  bottom: 30px;
-  width: 7vh;
+.exitingToRight {
+  animation: slideOutToRight 0.3s linear;
 }
 
-.indicator {
-  position: absolute;
-  bottom: 30px;
-  left: 50px; 
-  display: flex;
-  flex-direction: row;
-  gap: 10px;
+.startingFromLeft {
+  animation: slideInFromLeft 0.3s linear;
+}
+
+.startingFromRight {
+  animation: slideInFromRight 0.3s linear;
 }
 
 @keyframes slideOutToRight {
@@ -109,21 +79,51 @@ body {
 @keyframes slideInFromLeft {
   0% {
     transform: translateX(-100%);
-    opacity: 0;
+    opacity: 1;
   }
   100% {
     transform: translateX(0%);
-    opacity: 1;
+    opacity: 0;
   }
 }
 
 @keyframes slideInFromRight {
   0% {
     transform: translateX(100%);
-    opacity: 0;
+    opacity: 1;
   }
   100% {
     transform: translateX(0%);
-    opacity: 1;
+    opacity: 0;
   }
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  height: 10hv;
+  width: 100%;
+}
+
+.next {
+  position: absolute;
+  right: 30px;
+  bottom: 30px;
+  width: 7vh;
+}
+
+.prev {
+  position: absolute;
+  right: 120px;
+  bottom: 30px;
+  width: 7vh;
+}
+
+.indicator {
+  position: absolute;
+  bottom: 50px;
+  left: 50px;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
 }

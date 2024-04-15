@@ -8,7 +8,7 @@ export const Card = ({
   prevLayout,
   count,
   quantity,
-  exitingTo,
+  animationClass,
 }) => {
   //handlers for click scrolling
   const handleNextClick = () => {
@@ -22,7 +22,11 @@ export const Card = ({
   return (
     <>
       <section className="header">
-        <img className={`imagen ${exitingTo}`} src={data[count].image} alt="" />
+        <img
+          className={`imagen ${animationClass}`}
+          src={data[count].image}
+          alt=""
+        />
       </section>
 
       <section className="main-container">
