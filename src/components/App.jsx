@@ -57,7 +57,7 @@ function App() {
         nextLayout={nextStep}
         prevLayout={prevStep}
         count={count}
-        data={tutorialData[count]}
+        data={tutorialData}
         quantity={quantity}
         exitingTo={exitingTo}
       ></Card>

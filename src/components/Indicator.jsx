@@ -1,5 +1,13 @@
-export const Indicator = ({pasos, className, quantity}) => {
-    return(
-        <div className={className}> {pasos+1}-{quantity} </div>
-    )
-}
+import { StyledCircle } from "./StyledCircle.jsx";
+
+export const Indicator = ({ data, count }) => {
+  return (
+    <div className="indicator">
+      {data.map((e, index) => {
+        console.log("index: " + index);
+        console.log("count: " + count);
+        return <StyledCircle count={count} key={index} positionIndex={index} />;
+      })}
+    </div>
+  );
+};

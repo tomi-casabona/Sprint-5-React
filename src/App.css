@@ -78,9 +78,11 @@ body {
 
 .indicator {
   position: absolute;
-  left: 30px;
   bottom: 30px;
-  width: 7vh;
+  left: 50px; 
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
 }
 
 @keyframes slideOutToRight {

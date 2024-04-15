@@ -22,15 +22,15 @@ export const Card = ({
   return (
     <>
       <section className="header">
-        <img className={`imagen ${exitingTo}`} src={data.image} alt="" />
+        <img className={`imagen ${exitingTo}`} src={data[count].image} alt="" />
       </section>
 
       <section className="main-container">
-        <ContentText data={data} />
+        <ContentText data={data[count]} />
       </section>
 
       <section className="footer">
-        <Indicator className="indicator" pasos={count} quantity={quantity} />
+        <Indicator count={count} quantity={quantity} data={data} />
 
         <div className="button">
           {count <= 1 && (
