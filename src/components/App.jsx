@@ -29,17 +29,27 @@ const tutorialData = [
 function App() {
   const [count, setCount] = useState(1);
   const quantity = tutorialData.length;
+  //const [ entringFrom, setEntringFrom ] = useState(null);
+  const [exitingTo, setExitingTo] = useState(null);
 
-  function nextStep() {
-    if (count === 0) setCount(1);
-    if (count === 1) setCount(2);  
-    if (count === 2) setCount(0);
-  }
-  function prevStep() {
-    if (count === 0) setCount(2);
-    if (count === 1) setCount(0); 
-    if(count === 2) setCount(1);  
-  }
+  // functions for change the count state
+  const nextStep = () => {
+    setExitingTo("exitingToRight");
+
+    setTimeout(() => {
+      setCount((prevCount) => (prevCount + 1) % quantity);
+      setExitingTo(null);
+    }, 500);
+  };
+
+  const prevStep = () => {
+    setExitingTo("exitingToLeft");
+
+    setTimeout(() => {
+      setCount((prevCount) => (prevCount - 1 + quantity) % quantity);
+      setExitingTo(null);
+    }, 500);
+  };
 
   return (
     <main className="main">
@@ -49,6 +59,7 @@ function App() {
         count={count}
         data={tutorialData[count]}
         quantity={quantity}
+        exitingTo={exitingTo}
       ></Card>
     </main>
   );

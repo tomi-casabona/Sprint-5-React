@@ -1,4 +1,5 @@
 export const ArrowButton = ({ throwHandleClick, src, className }) => {
+  //handle click callback
   function handleClick() {
     throwHandleClick();
   }

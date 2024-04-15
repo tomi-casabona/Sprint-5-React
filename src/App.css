@@ -28,6 +28,22 @@ body {
 .image {
   min-width: 320px;
   height: 40vh;
+  animation: slideOutToRight 0.5s ease-in-out;
+}
+
+.exitingToLeft {
+  animation: slideOutToLeft 0.5s ease-in-out;
+}
+
+.exitingToRight {
+  animation: slideOutToRight 0.5s ease-in-out;
+}
+
+.startingFromLeft {
+  animation: slideInFromLeft 0.5s ease-in-out;
+}
+.startingFromRight {
+  animation: slideInFromRight 0.5s ease-in-out;
 }
 
 .main-container {
@@ -55,7 +71,7 @@ body {
 
 .prev {
   position: absolute;
-  right: 80px;
+  right: 120px;
   bottom: 30px;
   width: 7vh;
 }
@@ -65,4 +81,47 @@ body {
   left: 30px;
   bottom: 30px;
   width: 7vh;
+}
+
+@keyframes slideOutToRight {
+  0% {
+    transform: translateX(0%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes slideOutToLeft {
+  0% {
+    transform: translateX(0%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(-100%);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInFromRight {
+  0% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0%);
+    opacity: 1;
+  }
 }

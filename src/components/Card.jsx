@@ -2,54 +2,54 @@ import { ArrowButton } from "./ArrowButton";
 import { ContentText } from "./ContentText";
 import { Indicator } from "./Indicator";
 
-export const Card = ({ data, nextLayout, prevLayout, count, quantity }) => {
+export const Card = ({
+  data,
+  nextLayout,
+  prevLayout,
+  count,
+  quantity,
+  exitingTo,
+}) => {
+  //handlers for click scrolling
   const handleNextClick = () => {
     nextLayout();
   };
+
   const handlePrevClick = () => {
     prevLayout();
   };
- 
 
   return (
     <>
       <section className="header">
-        <img className="image" src={data.image} alt="" />
+        <img className={`imagen ${exitingTo}`} src={data.image} alt="" />
       </section>
 
       <section className="main-container">
         <ContentText data={data} />
       </section>
 
-<section className="footer">
+      <section className="footer">
+        <Indicator className="indicator" pasos={count} quantity={quantity} />
 
-  <Indicator className="indicator" pasos={count} quantity={quantity} />
+        <div className="button">
+          {count <= 1 && (
+            <ArrowButton
+              throwHandleClick={handleNextClick}
+              src={"./images/right-arrow.png"}
+              className="next"
+            ></ArrowButton>
+          )}
 
-<div className="button">
-
-      {count <= 1 && (
-        <ArrowButton
-          throwHandleClick={handleNextClick}
-          src={"./images/right-arrow.png"}
-          className="next"
-        ></ArrowButton>
-      )}
-
-      {count >= 1 && (
-        <ArrowButton
-          throwHandleClick={handlePrevClick}
-          src={"./images/left-arrow.png"}
-          className="prev"
-        ></ArrowButton>
-      )}
-
-</div>
-      
-
-</section>
-
-
-
+          {count >= 1 && (
+            <ArrowButton
+              throwHandleClick={handlePrevClick}
+              src={"./images/left-arrow.png"}
+              className="prev"
+            ></ArrowButton>
+          )}
+        </div>
+      </section>
     </>
   );
 };
