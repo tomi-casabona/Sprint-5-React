@@ -21,7 +21,9 @@ export const Card = ({
 
   return (
     <>
-      <section className={`header ${count === 0 ? "time" : count === 1 ? "programming" : "meditation"}`}>
+      <section
+        className={`header ${count === 0 ? "time" : count === 1 ? "programming" : "meditation"}`}
+      >
         <img
           className={`imagen ${animationClass}`}
           src={data[count].image}
@@ -31,29 +33,24 @@ export const Card = ({
 
       <section className="main-container">
         <ContentText data={data[count]} />
-      </section>
 
-      <section className="footer">
+        <section className="footer">
+          <Indicator count={count} quantity={quantity} data={data} />
 
-        <Indicator count={count} quantity={quantity} data={data} />
-
-        <div className="buttons">
-          {count <= 1 && (
+          <div className="buttons">
             <ArrowButton
               throwHandleClick={handleNextClick}
               src={"./images/right-arrow.png"}
-              className="next"
+              className={`next ${count === 2 ? "disabled" : "enabled"}`}
             ></ArrowButton>
-          )}
 
-          {count >= 1 && (
             <ArrowButton
               throwHandleClick={handlePrevClick}
               src={"./images/left-arrow.png"}
-              className="prev"
+              className={`prev ${count === 0 ? "disabled" : "enabled"}`}
             ></ArrowButton>
-          )}
-        </div>
+          </div>
+        </section>
       </section>
     </>
   );
