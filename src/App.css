@@ -2,41 +2,88 @@ body {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-  min-height: 100vh;
   min-width: 320px;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(212, 212, 212);
 }
-
+/* TODO cambiar color de fondo de imagenes segun imagen */
 .main {
+  max-width: 320px;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
-}
-
-.content {
-  height: 30hv;
 }
 
 .header {
+  width: 320px;
+  height: 400px;
   display: flex;
-  background-color: rgb(79, 168, 178);
-  width: 100%;
+  border-radius: 10% 10% 0 0;
+  align-content: center;
   justify-content: center;
-  height: 60vh;
-  align-items: center;
+}
+.meditation {
+  background-color: rgb(217, 184, 36);
+}
+.time {
+  background-color: rgb(79, 168, 178);
+}
+.programming {
+  background-color: rgb(203, 203, 203);
+}
+
+.imagen {
+  max-width: 250px;
 }
 
 .main-container {
   display: flex;
-  flex-direction: column;
-  background-color: antiquewhite;
-  width: 100%;
-  text-align: center;
-  height: 40vh;
+  background-color: whitesmoke;
+  height: 250px;
 }
 
-.image {
-  min-width: 320px;
-  height: 40vh;
+.content {
+  justify-content: center;
+  text-align: left;
+  padding: 1em;
+  line-height: 1.5;
+}
+
+.footer {
+  height: 100px;
+  border-radius: 0% 0% 10% 10%;
+  background-color: whitesmoke;
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  gap: 1em;
+}
+
+.next {
+  width: 50px;
+  height: 50px;
+}
+
+.prev {
+  width: 50px;
+  height: 50px;
+}
+
+.indicator {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1em;
 }
 
 .exitingToLeft {
@@ -96,34 +143,4 @@ body {
     transform: translateX(0%);
     opacity: 0;
   }
-}
-
-.footer {
-  position: fixed;
-  bottom: 0;
-  height: 10hv;
-  width: 100%;
-}
-
-.next {
-  position: absolute;
-  right: 30px;
-  bottom: 30px;
-  width: 7vh;
-}
-
-.prev {
-  position: absolute;
-  right: 120px;
-  bottom: 30px;
-  width: 7vh;
-}
-
-.indicator {
-  position: absolute;
-  bottom: 50px;
-  left: 50px;
-  display: flex;
-  flex-direction: row;
-  gap: 10px;
 }

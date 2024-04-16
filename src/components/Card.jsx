@@ -21,7 +21,7 @@ export const Card = ({
 
   return (
     <>
-      <section className="header">
+      <section className={`header ${count === 0 ? "time" : count === 1 ? "programming" : "meditation"}`}>
         <img
           className={`imagen ${animationClass}`}
           src={data[count].image}
@@ -34,9 +34,10 @@ export const Card = ({
       </section>
 
       <section className="footer">
+
         <Indicator count={count} quantity={quantity} data={data} />
 
-        <div className="button">
+        <div className="buttons">
           {count <= 1 && (
             <ArrowButton
               throwHandleClick={handleNextClick}
