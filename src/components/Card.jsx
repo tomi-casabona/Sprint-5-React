@@ -1,5 +1,6 @@
 import { ArrowButton } from "./ArrowButton";
 import { ContentText } from "./ContentText";
+import { HeaderImage } from "./HeaderImage";
 import { Indicator } from "./Indicator";
 
 export const Card = ({
@@ -21,15 +22,7 @@ export const Card = ({
 
   return (
     <>
-      <section
-        className={`header ${count === 0 ? "time" : count === 1 ? "programming" : "meditation"}`}
-      >
-        <img
-          className={`imagen ${animationClass}`}
-          src={data[count].image}
-          alt=""
-        />
-      </section>
+      <HeaderImage animationClass={animationClass} count={count} data={data} />
 
       <section className="main-container">
         <ContentText data={data[count]} />

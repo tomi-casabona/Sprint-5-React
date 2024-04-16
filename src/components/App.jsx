@@ -6,10 +6,9 @@ import { tutorialData } from "../constants/constants";
 function App() {
   const [count, setCount] = useState(1);
   const quantity = tutorialData.length;
-  //const [ entringFrom, setEntringFrom ] = useState(null);
   const [animationClass, setAnimationClass] = useState(null);
 
-  // functions for change the count state
+  // functions for change the count state and trigger scrolling animation passed by props for handle the scrolling click
   const nextStep = () => {
     setAnimationClass("exitingToRight");
 

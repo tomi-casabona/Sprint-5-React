@@ -96,19 +96,19 @@ body {
 }
 
 .exitingToLeft {
-  animation: slideOutToLeft 0.3s linear;
+  animation: slideOutToLeft 0.2s linear;
 }
 
 .exitingToRight {
-  animation: slideOutToRight 0.3s linear;
+  animation: slideOutToRight 0.2s linear;
 }
 
 .startingFromLeft {
-  animation: slideInFromLeft 0.3s linear;
+  animation: slideInFromLeft 0.2s linear;
 }
 
 .startingFromRight {
-  animation: slideInFromRight 0.3s linear;
+  animation: slideInFromRight 0.2s linear;
 }
 
 @keyframes slideOutToRight {
@@ -118,6 +118,7 @@ body {
   }
   100% {
     transform: translateX(100%);
+    opacity:1;
   }
 }
 
