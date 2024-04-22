@@ -2,74 +2,155 @@ body {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-  min-height: 100vh;
   min-width: 320px;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(107, 105, 105);
 }
-
+/* TODO cambiar color de fondo de imagenes segun imagen */
 .main {
+  max-width: 320px;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
 }
 
 .header {
+  width: 320px;
+  height: 400px;
   display: flex;
-  background-color: rgb(79, 168, 178);
-  width: 100%;
+  border-radius: 10% 10% 0 0;
+  align-content: center;
   justify-content: center;
-  height: 60vh;
-  align-items: center;
 }
 
-.image {
-  min-width: 320px;
-  height: 40vh;
+.meditation {
+  background-color: rgb(217, 184, 36);
+}
+.time {
+  background-color: rgb(79, 168, 178);
+}
+.programming {
+  background-color: rgb(203, 203, 203);
 }
 
-.main-container {
-  display: flex;
-  flex-direction: column;
-  background-color: antiquewhite;
-  width: 100%;
-  text-align: center;
-  height: 30vh;
+.imagen {
+  max-width: 250px;
 }
 
 .content {
-  background-color: transparent;
-  padding-left: 20px;
-  padding-right: 20px;
+  justify-content: center;
+  text-align: left;
+  padding: 1em;
+  line-height: 1.5;
+  display: flex;
+  flex-direction: column;
+  height: 250px;
+}
+
+.main-container {
+  background-color: whitesmoke;
+  border-radius: 0% 0% 10% 10%;
 }
 
 .footer {
-  height: 10hv;
+  background-color: transparent;
+  display: flex;
   width: 100%;
-  background-color: rgb(139, 0, 86);
+  justify-content: space-around;
+  padding-bottom: 1em;
 }
 
-.button {
-  position: absolute;
-  bottom: 20px;
-  right: 20px;
-  width: 7vh;
-  align-self: flex-end;
-  background-color: transparent;
+.buttons {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  gap: 1em;
 }
 
-.button-prev {
-  position: absolute;
-  bottom: 20px;
-  right: 70px;
-  width: 7vh;
-  align-self: flex-end;
-  background-color: transparent;
+.disabled {
+  display: none;
+}
+.enabled {
+  display: block;
+}
+
+.next {
+  width: 50px;
+  height: 50px;
+}
+
+.prev {
+  width: 50px;
+  height: 50px;
 }
 
 .indicator {
-  position: absolute;
-  bottom: 20px;
-  left: 20px;
-  width: 7vh;
-  align-self: flex-end;
-  background-color: transparent;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1em;
+}
+
+.exitingToLeft {
+  animation: slideOutToLeft 0.2s linear;
+}
+
+.exitingToRight {
+  animation: slideOutToRight 0.2s linear;
+}
+
+.startingFromLeft {
+  animation: slideInFromLeft 0.2s linear;
+}
+
+.startingFromRight {
+  animation: slideInFromRight 0.2s linear;
+}
+
+@keyframes slideOutToRight {
+  0% {
+    transform: translateX(0%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(100%);
+    opacity:1;
+  }
+}
+
+@keyframes slideOutToLeft {
+  0% {
+    transform: translateX(0%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(-100%);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-100%);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(0%);
+    opacity: 0;
+  }
+}
+
+@keyframes slideInFromRight {
+  0% {
+    transform: translateX(100%);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(0%);
+    opacity: 0;
+  }
 }
