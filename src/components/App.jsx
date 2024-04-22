@@ -8,7 +8,7 @@ function App() {
   const quantity = tutorialData.length;
   const [animationClass, setAnimationClass] = useState(null);
 
-  // functions for change the count state and trigger scrolling animation passed by props for handle the scrolling click
+  // functions for change the count  and trigger scrolling animation passed by props for handle the scrolling click
   const nextStep = () => {
     setAnimationClass("exitingToRight");
 
